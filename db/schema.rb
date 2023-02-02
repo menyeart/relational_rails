@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_31_223843) do
+ActiveRecord::Schema.define(version: 2023_02_02_004436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2023_01_31_223843) do
   end
 
   create_table "trails", force: :cascade do |t|
-    t.integer "park_id"
     t.string "name"
     t.integer "length_miles"
     t.boolean "water_source"
