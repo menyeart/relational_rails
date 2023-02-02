@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_02_004436) do
+ActiveRecord::Schema.define(version: 2023_02_02_012744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 2023_02_02_004436) do
     t.integer "feet_elevation_gain"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "national_park_id"
+    t.index ["national_park_id"], name: "index_trails_on_national_park_id"
   end
 
+  add_foreign_key "trails", "national_parks"
 end
