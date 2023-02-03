@@ -1,6 +1,7 @@
 class NationalParksController < ApplicationController
   def index
     @national_parks = NationalPark.all
+    @national_parks_sorted = NationalPark.order_by_most_recent
   end
 
   def show
