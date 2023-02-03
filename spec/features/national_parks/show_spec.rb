@@ -17,12 +17,20 @@ RSpec.describe 'the national parks show page' do
 
   it "it displays links for the national parks index page and trails index page" do
     national_park = NationalPark.create!(name: "Rocky Mountain", state: "Colorado", total_acres: 265807, charges_fee: true)
-    national_park2 = NationalPark.create!(name: "Yosemite", state: "California", total_acres: 10000000, charges_fee: true)
 
     visit "/national_parks/#{national_park.id}"
 
     expect(page).to have_link 'All National Parks', href: '/national_parks'
     expect(page).to have_link 'All Trails', href: '/trails'
   end
+
+  it "it displays the link to its child_table_name` page " do
+    national_park = NationalPark.create!(name: "Rocky Mountain", state: "Colorado", total_acres: 265807, charges_fee: true)
+
+    visit "/national_parks/#{national_park.id}"
+
+    expect(page).to have_link "All trails of #{national_park.name}", href: "/national_parks/#{national_park.id}/trails"
+  end
+
 
 end
