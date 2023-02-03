@@ -7,4 +7,7 @@ class NationalPark < ApplicationRecord
     NationalPark.order(created_at: :desc)
   end
 
+  def count_children
+    self.trails.count
+  end
 end
