@@ -1,4 +1,9 @@
 <h1><%= @national_park.name %></h2>
+<div>
+<%= link_to "All trails of #{@national_park.name}", "/national_parks/#{@national_park.id}/trails" %>
+
+</div>
+
 <h2> Number of Trails: <%= @count_children %></h2>
 <h2> State: <%= @national_park.state %></h2>
 <h2> Total Acres: <%= @national_park.total_acres %></h2>
