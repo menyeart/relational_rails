@@ -8,6 +8,10 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
+  <h1>
+  <%= link_to "All National Parks", "/national_parks" %>
+  <%= link_to "All Trails", "/trails" %>
+</h1>
 
   <body>
     <%= yield %>
