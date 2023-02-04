@@ -3,3 +3,4 @@
 <% @national_parks_sorted.each do |national_park| %>
   <h2><%= "#{national_park.name}: #{national_park.created_at}" %></h2>
 <% end %> 
+ <%= link_to 'New National Park', '/national_parks/new'  %>
