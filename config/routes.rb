@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   # changed commented out route above to route below as route to national park new in link was routing to the show controller with 'new' as the id
   get '/national_parks/:id' => 'national_parks#show'
   # , as: 'national_park' constraints: { id: /\d.+/ }
+
+  get '/national_parks/:id/edit', to:  'national_parks#edit'
+  patch '/national_parks/:id/', to:  'national_parks#update'
   
   
 
