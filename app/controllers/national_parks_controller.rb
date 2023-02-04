@@ -17,8 +17,19 @@ class NationalParksController < ApplicationController
     redirect_to "/national_parks/"
   end
 
-  def national_park_params
-    params.permit(:name, :state, :total_acres, :charges_fee)
+  def edit
+    @national_park = NationalPark.find(params[:id])
   end
+
+  def update
+    national_park = NationalPark.find(params[:id])
+    national_park.update(national_park_params)
+    redirect_to "/national_parks/#{national_park.id}"
+  end
+
+  private
+    def national_park_params
+      params.permit(:name, :state, :total_acres, :charges_fee)
+    end
 
 end
