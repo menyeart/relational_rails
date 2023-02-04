@@ -1,0 +1,16 @@
+<div class = 'form'>
+  <%= form_with url: '/national_parks', method: :post, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+    <%= form.label :total_acres %>
+    <%= form.number_field :total_acres %>
+    <%= form.label :charges_fee, "Charges entrance fee?" %>
+    <%= form.label :charges_fee, "True" %>
+    <%= form.radio_button :charges_fee, true %>
+    <%= form.label :charges_fee, "False" %>
+    <%= form.radio_button :charges_fee, false %>
+    <%= form.submit "Create National Park" %>
+  <% end %>
+<div>
