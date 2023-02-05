@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   patch '/national_parks/:id/', to:  'national_parks#update'
   get '/national_parks/:id/trails/new', to: 'national_park_trails#new'
   post '/national_parks/:id/trails', to: 'national_park_trails#create'
+  get '/trails/:id/edit', to:  'trails#edit'
+  patch '/trails/:id/', to:  'trails#update'
+  
 
   
   
