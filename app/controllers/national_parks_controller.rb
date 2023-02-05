@@ -13,7 +13,7 @@ class NationalParksController < ApplicationController
   end
 
   def create
-    glacier = NationalPark.create(national_park_params)
+    NationalPark.create(national_park_params)
     redirect_to "/national_parks/"
   end
 
@@ -31,5 +31,4 @@ class NationalParksController < ApplicationController
     def national_park_params
       params.permit(:name, :state, :total_acres, :charges_fee)
     end
-
 end

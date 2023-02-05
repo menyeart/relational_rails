@@ -1,0 +1,18 @@
+<div class = 'form'>
+  <%= form_with url: "/national_parks/#{@national_park.id}/trails", method: :post, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :length_miles %>
+    <%= form.text_field :length_miles %>
+    <%= form.label :feet_elevation_gain %>
+    <%= form.number_field :feet_elevation_gain %>
+    <%= form.label :water_source, "Water Source?" %>
+    <%= form.label :true, "True" %>
+    <%= form.radio_button :water_source, true %>
+    <%= form.label :water_source, "False" %>
+    <%= form.radio_button :water_source, false %>
+    <%= form.hidden_field :national_park_id, value: "#{@national_park.id}" %>
+
+    <%= form.submit "Create Trail" %>
+  <% end %>
+<div>
