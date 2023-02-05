@@ -1,0 +1,17 @@
+<h1><%= "Edit #{@trail.name}"%></h1>
+<div class = 'form'>
+  <%= form_with url: "/trails/#{@trail.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :length_miles %>
+    <%= form.text_field :length_miles %>
+    <%= form.label :feet_elevation_gain %>
+    <%= form.number_field :feet_elevation_gain %>
+    <%= form.label :water_source, "Water Source?" %>
+    <%= form.label :water_source, "True" %>
+    <%= form.radio_button :water_source, true %>
+    <%= form.label :water_source, "False" %>
+    <%= form.radio_button :water_source, false %>
+    <%= form.submit "Update Trail" %>
+  <% end %>
+<div>
