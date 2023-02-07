@@ -7,3 +7,5 @@
   <h3> Elevation Gain(ft): <%= trail.feet_elevation_gain %></h3>
   <h3> Water Source: <%= trail.water_source %></h3>
 <% end %> 
+
+<%= link_to "Sort trails by alphabetical order", {:sort_param => "name"} %>
