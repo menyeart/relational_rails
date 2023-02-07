@@ -6,3 +6,5 @@
   <h3> Elevation Gain(ft): <%= trail.feet_elevation_gain %></h3>
   <h3> Water Source: <%= trail.water_source %></h3>
 <% end %> 
+
+<h2><%= button_to "Show only trails with water", "/trails/", method: :get, name: "subaction" %></h2>

@@ -1,6 +1,7 @@
 class TrailsController < ApplicationController
   def index
     @trails = Trail.all
+    @trails = Trail.only_true if params[:subaction] == "Show only trails with water" 
   end
 
   def show
