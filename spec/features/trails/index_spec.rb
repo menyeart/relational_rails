@@ -8,7 +8,7 @@ RSpec.describe 'the trails index page' do
     @trail2 = Trail.create!(name: "Mosca Pass", length_miles: 6,feet_elevation_gain: 1400, water_source: false, national_park_id: @national_park1.id)
   end
   
-  it "displays the name of every trail" do
+  it "displays the attributes of every trail" do
     visit "/trails/"
 
     expect(page).to have_content(@trail.name)
@@ -34,5 +34,17 @@ RSpec.describe 'the trails index page' do
     expect(page).to have_content("Longs Peak")
     expect(page).to_not have_content("Mosca Pass")
     expect(page).to_not have_content("Water Source: false")
+  end
+
+  it "has individual links to edit each trail" do
+    visit "/trails/"
+    click_link("Edit #{@trail.name}")
+  
+    expect(current_path).to eq("/trails/#{@trail.id}/edit")
+
+    visit "/trails/"
+    click_link("Edit #{@trail2.name}")
+    
+    expect(current_path).to eq("/trails/#{@trail2.id}/edit")
   end
 end
