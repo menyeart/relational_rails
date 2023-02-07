@@ -8,5 +8,4 @@ class Trail < ApplicationRecord
   def self.sort_by_name
     Trail.order(:name)
   end
-  
 end
