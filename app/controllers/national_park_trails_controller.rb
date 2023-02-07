@@ -2,6 +2,7 @@ class NationalParkTrailsController < ApplicationController
   def index
    @national_park = NationalPark.find(params[:national_park_id])
    @trails = @national_park.trails
+   @trails = @national_park.trails.sort_by_name if params[:sort_param] == "name"
   end
 
   def new
