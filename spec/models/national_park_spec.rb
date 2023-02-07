@@ -25,8 +25,5 @@ describe NationalPark, type: :model do
     it "can calulcate the number of children for a specific parent" do
       expect(@national_park1.count_children).to eq(2)
     end
-
- 
-
   end
 end

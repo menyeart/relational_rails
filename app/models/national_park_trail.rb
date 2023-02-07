@@ -1,0 +1,2 @@
+class NationalParkTrail < ApplicationRecord
+end
