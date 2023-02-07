@@ -31,6 +31,4 @@ RSpec.describe 'the national parks show page' do
 
     expect(page).to have_link "All trails of #{national_park.name}", href: "/national_parks/#{national_park.id}/trails"
   end
-
-
 end
