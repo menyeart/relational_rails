@@ -16,12 +16,10 @@ class TrailsController < ApplicationController
     trail = Trail.find(params[:id])
     trail.update(trail_params)
     redirect_to "/trails/#{trail.id}"
-
   end
 
   private
     def trail_params
       params.permit(:name, :length_miles, :feet_elevation_gain, :water_source)
     end
-
 end
