@@ -8,4 +8,9 @@ class Trail < ApplicationRecord
   def self.sort_by_name
     Trail.order(:name)
   end
+
+  def self.sort_by_length(miles)
+    where("length_miles > #{miles}")
+  end
+
 end
