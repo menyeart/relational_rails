@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/trails/:id/edit', to:  'trails#edit'
   patch '/trails/:id/', to:  'trails#update'
   delete '/national_parks/:id', to: 'national_parks#destroy'
+  delete '/trails/:id', to: 'trails#destroy'
 end
