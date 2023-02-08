@@ -1,8 +1,13 @@
 class NationalParkTrailsController < ApplicationController
   def index
-   @national_park = NationalPark.find(params[:national_park_id])
-   @trails = @national_park.trails
-   @trails = @national_park.trails.sort_by_name if params[:sort_param] == "name"
+    @national_park = NationalPark.find(params[:national_park_id])
+    if params[:sort_param] == "name"
+      @trails = @national_park.trails.sort_by_name
+    elsif params.keys.include?('length') == true
+      @trails = @national_park.trails.sort_by_length(params[:length])
+    else
+      @trails = @national_park.trails
+   end
   end
 
   def new
