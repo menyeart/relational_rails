@@ -11,3 +11,10 @@
 <div>
 <%= link_to "Sort trails by alphabetical order", {:sort_param => "name"} %>
 <div>
+
+<div class = 'form'>
+<%= form_with(url: "/national_parks/#{@national_park.id}/trails", method: "get", local: true) do %>
+  <%= label_tag(:length, "Find only trails with lengths over:") %>
+  <%= number_field_tag(:length) %>
+  <%= submit_tag("Search") %>
+<% end %>
