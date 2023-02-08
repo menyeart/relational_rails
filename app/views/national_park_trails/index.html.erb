@@ -3,9 +3,11 @@
 
 <% @trails.each do |trail| %>
   <h2><%= trail.name %></h2>
+  <%= link_to "Edit #{trail.name}", "/trails/#{trail.id}/edit"  %>
   <h3> Total Distance(miles): <%= trail.length_miles %></h3>
   <h3> Elevation Gain(ft): <%= trail.feet_elevation_gain %></h3>
   <h3> Water Source: <%= trail.water_source %></h3>
 <% end %> 
-
+<div>
 <%= link_to "Sort trails by alphabetical order", {:sort_param => "name"} %>
+<div>
