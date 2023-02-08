@@ -3,3 +3,6 @@
 <h2> Elevation Gain(ft): <%= @trail.feet_elevation_gain %></h2>
 <h2> Water Source: <%= @trail.water_source %></h2>
 <h2><%= button_to "Edit #{@trail.name}", "/trails/#{@trail.id}/edit", method: :get %></h2>
+<div>
+<%= link_to "Delete #{@trail.name}", "/trails/#{@trail.id}", method: :delete %>
+<div>
