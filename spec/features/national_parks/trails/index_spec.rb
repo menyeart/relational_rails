@@ -32,5 +32,22 @@ RSpec.describe "National Park's trails index" do
       expect(trail2).to appear_before(trail1)
       expect(trail1).to appear_before(trail3)
     end
+
+    it "has individual links to edit each trail" do
+      glacier = NationalPark.create!(name: 'Glacier', state: 'Montana', total_acres: 1012837, charges_fee: true)
+      highline = glacier.trails.create!(name: 'Highline', length_miles: 15, water_source: false, feet_elevation_gain: 2600)
+      grinell = glacier.trails.create!(name: 'Grinell Glacier', length_miles: 11, water_source: true, feet_elevation_gain: 2181)
+      swiftcurernt = glacier.trails.create!(name: 'Swiftcurrent Peak', length_miles: 13, water_source: true, feet_elevation_gain: 4000)
+
+      visit "/national_parks/#{glacier.id}/trails"
+      click_link("Edit #{highline.name}")
+    
+      expect(current_path).to eq("/trails/#{highline.id}/edit")
+  
+      visit "/national_parks/#{glacier.id}/trails"
+      click_link("Edit #{grinell.name}")
+      
+      expect(current_path).to eq("/trails/#{grinell.id}/edit")
+    end
   end
 end
